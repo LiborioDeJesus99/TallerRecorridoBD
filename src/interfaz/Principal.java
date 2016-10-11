@@ -39,8 +39,6 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblMatrizResultante = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblMatrizInicial = new javax.swing.JTable();
         cmbOperaciones = new javax.swing.JComboBox();
@@ -69,19 +67,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setText("Operaciones con Matrices");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 410, 50));
 
-        tblMatrizResultante.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        tblMatrizResultante.setEnabled(false);
-        jScrollPane1.setViewportView(tblMatrizResultante);
-
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 320, 180));
-
         tblMatrizInicial.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -94,13 +79,14 @@ public class Principal extends javax.swing.JFrame {
         tblMatrizInicial.setName("Matriz Inicial"); // NOI18N
         jScrollPane2.setViewportView(tblMatrizInicial);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 320, 180));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 320, 180));
 
         cmbOperaciones.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Figura 1", "Figura 2", "Figura 3", "Figura 4", "Figura 5" }));
+        cmbOperaciones.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Recorrido Uno", "Recorrido Dos", "Recorrido Tres", "Recorrido Cuatro", "Recorrido Cinco" }));
+        cmbOperaciones.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel2.add(cmbOperaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 230, 180, -1));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acciones", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acciones", 2, 0, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cmdCrear.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -150,15 +136,15 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 60, 470, 70));
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Iniciales", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Iniciales", 2, 0, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel6.setText("Número de Columnas: ");
+        jLabel6.setText("Número De Columnas: ");
         jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 30, -1, 20));
 
         jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jLabel7.setText("Número de Filas: ");
+        jLabel7.setText("Número De Filas: ");
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
 
         txtNumeroFilas.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -177,7 +163,7 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 360, 70));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", 2, 0, new java.awt.Font("Times New Roman", 1, 14))); // NOI18N
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtResultado.setEditable(false);
@@ -185,13 +171,13 @@ public class Principal extends javax.swing.JFrame {
         txtResultado.setRows(5);
         jScrollPane3.setViewportView(txtResultado);
 
-        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 550, 100));
+        jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 300, 170));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 570, 130));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 140, 320, 200));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 480));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 350));
 
-        setSize(new java.awt.Dimension(895, 519));
+        setSize(new java.awt.Dimension(895, 389));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -215,16 +201,12 @@ public class Principal extends javax.swing.JFrame {
             DefaultTableModel tm, tm2;
             int nf, nc;
             tm = (DefaultTableModel) tblMatrizInicial.getModel();
-            tm2 = (DefaultTableModel) tblMatrizResultante.getModel();
 
             nf = Integer.parseInt(txtNumeroFilas.getText());
             nc = Integer.parseInt(txtNumeroColumnas.getText());
 
             tm.setRowCount(nf);
             tm.setColumnCount(nc);
-
-            tm2.setRowCount(nf);
-            tm2.setColumnCount(nc);
 
             JButton botonesH[] = {cmdLlenadoAutomatico, cmdLlenadoManual, cmdLimpiar};
             JButton botonesD[] = {cmdCrear, cmdOperacion};
@@ -265,7 +247,6 @@ public class Principal extends javax.swing.JFrame {
                             i = nf;
                             sw = false;
                             Helper.TablaPorDefecto(tblMatrizInicial);
-                            Helper.TablaPorDefecto(tblMatrizResultante);
                         } else {
                             aux = 0;
                         }
@@ -303,7 +284,6 @@ public class Principal extends javax.swing.JFrame {
     private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
 
         Helper.TablaPorDefecto(tblMatrizInicial);
-        Helper.TablaPorDefecto(tblMatrizResultante);
 
         txtNumeroFilas.setText("");
         txtNumeroColumnas.setText("");
@@ -420,11 +400,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable tblMatrizInicial;
-    private javax.swing.JTable tblMatrizResultante;
     private javax.swing.JTextField txtNumeroColumnas;
     private javax.swing.JTextField txtNumeroFilas;
     private javax.swing.JTextArea txtResultado;

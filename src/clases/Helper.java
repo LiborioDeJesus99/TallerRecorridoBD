@@ -297,10 +297,10 @@ public class Helper {
 
     public static String Figura3(JTable tabla1) {
 
-        int m[][] = pasarDatosMatriz(tabla1);
-        int nf = m.length;
-        int nc = m[0].length;
+        int nf, nc, m[][] = pasarDatosMatriz(tabla1);
         String aux = "";
+        nf = m.length;
+        nc = m[0].length;
 
         aux = aux + Helper.recorridoHaciaArriba(m, 0, nf - 1, 0);
 
@@ -315,15 +315,12 @@ public class Helper {
         nf = m.length;
         nc = m[0].length;
 
-        aux = aux + Helper.recorridoHaciaArriba(m, 0, nf - 1, 0);
-        aux = aux + Helper.recorridoHaciaDerecha(m, 0, 1, nf / 2);
-        aux = aux + Helper.recorridoHaciaAbajo(m, nc / 2, 1, nf - 1);
-        aux = aux + Helper.recorridoHaciaDerecha(m, nf - 1, nc / 2, nc - 1);
-        aux = aux + Helper.recorridoHaciaArriba(m, nc - 1, nf - 2, 0);
+        aux = aux + Helper.recorridoHaciaDerecha(m, 0, 0, nf - 2);
+        aux = aux + Helper.recorridoDiagonalSecundariaHaciaAbajo(m, 0, nf - 1);
+        aux = aux + Helper.recorridoHaciaDerecha(m, nf - 1, 0, nc - 1);
 
         aux = aux.substring(0, aux.length() - 2) + ".";
         return aux;
-
     }
 
     public static String Figura5(JTable tabla1) {
