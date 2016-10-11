@@ -84,7 +84,6 @@ public class Helper {
                     tabla2.setValueAt(aux, i, j);
                 }
             }
-
         }
     }
 
@@ -94,16 +93,13 @@ public class Helper {
         nf = tabla1.getRowCount();
 
         int m[][] = new int[nf][nc];
-
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[0].length; j++) {
 
                 m[i][j] = (int) tabla1.getValueAt(i, j);
             }
-
         }
         return m;
-
     }
 
     public static String recorridoHaciaArriba(int[][] m, int j) {
@@ -113,7 +109,6 @@ public class Helper {
             Aux = Aux + m[i][j] + ", ";
         }
         return Aux;
-
     }
 
     public static String recorridoHaciaArriba(int[][] m, int j, int in, int fin) {
@@ -141,7 +136,6 @@ public class Helper {
             Aux = Aux + m[i][j] + ", ";
         }
         return Aux;
-
     }
 
     public static String recorridoHaciaDerecha(int[][] m, int i) {
@@ -150,7 +144,6 @@ public class Helper {
         for (int j = 0; j <= nc; j++) {
             Aux = Aux + m[i][j] + " ,";
         }
-
         return Aux;
     }
 
@@ -160,7 +153,6 @@ public class Helper {
         for (int j = in; j <= fin; j++) {
             Aux = Aux + m[i][j] + " ,";
         }
-
         return Aux;
     }
 
@@ -170,7 +162,6 @@ public class Helper {
         for (int j = nc - 1; j >= 0; j--) {
             Aux = Aux + m[i][j] + " ,";
         }
-
         return Aux;
     }
 
@@ -180,7 +171,6 @@ public class Helper {
         for (int j = in; j >= fin; j--) {
             Aux = Aux + m[i][j] + " ,";
         }
-
         return Aux;
     }
 
@@ -190,7 +180,6 @@ public class Helper {
         for (int i = 0; i < nf; i++) {
             Aux = Aux + m[i][i] + " ,";
         }
-
         return Aux;
     }
 
@@ -200,7 +189,6 @@ public class Helper {
         for (int i = nf - 1; i > 0; i--) {
             Aux = Aux + m[i][i] + " ,";
         }
-
         return Aux;
     }
 
@@ -211,7 +199,6 @@ public class Helper {
         for (int i = 0; i < nf; i++) {
             Aux = Aux + m[i][nc - 1 - i] + ", ";
         }
-
         return Aux;
     }
 
@@ -222,7 +209,6 @@ public class Helper {
         for (int i = nf - 1; i >= 0; i--) {
             Aux = Aux + m[i][nc - 1 - i] + ", ";
         }
-
         return Aux;
     }
 
@@ -233,7 +219,6 @@ public class Helper {
         for (int i = in; i >= fin; i--) {
             Aux = Aux + m[i][nc - 1 - i] + ", ";
         }
-
         return Aux;
     }
 
@@ -244,7 +229,6 @@ public class Helper {
         for (int i = in; i < fin; i++) {
             Aux = Aux + m[i][nc - 1 - i] + ", ";
         }
-
         return Aux;
     }
 
@@ -254,7 +238,6 @@ public class Helper {
         for (int i = in; i >= fin; i--) {
             Aux = Aux + m[i][i] + " ,";
         }
-
         return Aux;
     }
 
@@ -264,7 +247,6 @@ public class Helper {
         for (int i = in; i < fin; i++) {
             Aux = Aux + m[i][i] + " ,";
         }
-
         return Aux;
     }
 
@@ -286,23 +268,12 @@ public class Helper {
         nf = m.length;
         nc = m[0].length;
 
-        for (int i = 0; i < nf; i++) {
-            if (i == 0) {
-                aux = aux + Helper.recorridoHaciaDerecha(m, i, i, i);
-            }
-            if (i >= 0 && i < (nf - 1) / 2) {
-                aux = aux + Helper.recorridoHaciaAbajo(m, i, i, i);
-            }
-            if (i == (nf - 1) / 2) {
-                aux = aux + Helper.recorridoHaciaIzquierda(m, i);
-            }
-            if (i > (nf - 1) / 2) {
-                aux = aux + Helper.recorridoHaciaAbajo(m, i);
-            }
-            if (i == nf - 1) {
-                aux = aux + Helper.recorridoHaciaDerecha(m, i);
-            }
-        }
+        aux = aux + Helper.recorridoHaciaDerecha(m, 0, 0, nf - 2);
+        aux = aux + Helper.recorridoHaciaAbajo(m, nc - 1, 0, nf / 2 + 1);
+        aux = aux + Helper.recorridoHaciaIzquierda(m, nf / 2, nc - 2, 1);
+        aux = aux + Helper.recorridoHaciaAbajo(m, 0, nc / 2, nf - 1 + 1);
+        aux = aux + Helper.recorridoHaciaDerecha(m, nf - 1, 1, nc - 1);
+
         aux = aux.substring(0, aux.length() - 2) + ".";
         return aux;
     }
@@ -324,19 +295,19 @@ public class Helper {
         return aux;
     }
 
+    public static String Figura3(JTable tabla1) {
 
-    /* public static String Figura3(JTable tabla1) {
-
-       int m[][] = pasarDatosMatriz(tabla1);
+        int m[][] = pasarDatosMatriz(tabla1);
         int nf = m.length;
         int nc = m[0].length;
         String aux = "";
 
-        aux = aux + Helper.recorridoHaciaDerecha(m, 0, 0, nc - 2);
-        aux = aux + Helper.recorridoDiagonalSecundariaAbajo(m, 0, nf - 1);
-        aux = aux + Helper.recorridoHaciaDerecha(m, nf - 1, 0, nc - 1);
+        aux = aux + Helper.recorridoHaciaArriba(m, 0, nf - 1, 0);
+
+        aux = aux.substring(0, aux.length() - 2) + ".";
         return aux;
-    }*/
+    }
+
     public static String Figura4(JTable tabla1) {
 
         int nf, nc, m[][] = pasarDatosMatriz(tabla1);

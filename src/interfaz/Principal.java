@@ -91,6 +91,7 @@ public class Principal extends javax.swing.JFrame {
             }
         ));
         tblMatrizInicial.setEnabled(false);
+        tblMatrizInicial.setName("Matriz Inicial"); // NOI18N
         jScrollPane2.setViewportView(tblMatrizInicial);
 
         jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 320, 180));
@@ -334,7 +335,7 @@ public class Principal extends javax.swing.JFrame {
                 txtResultado.setText(Helper.Figura2(tblMatrizInicial));
                 break;
             case 2:
-                //txtResultado.setText(Helper.Figura3(tblMatrizInicial));
+                txtResultado.setText(Helper.Figura3(tblMatrizInicial));
                 break;
             case 3:
                 txtResultado.setText(Helper.Figura4(tblMatrizInicial));
