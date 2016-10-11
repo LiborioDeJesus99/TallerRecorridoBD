@@ -190,7 +190,7 @@ public class Principal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 880, 480));
 
-        setSize(new java.awt.Dimension(916, 519));
+        setSize(new java.awt.Dimension(895, 519));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -306,6 +306,7 @@ public class Principal extends javax.swing.JFrame {
 
         txtNumeroFilas.setText("");
         txtNumeroColumnas.setText("");
+        txtResultado.setText("");
         txtNumeroFilas.setEditable(true);
         txtNumeroColumnas.setEditable(true);
         txtNumeroFilas.requestFocusInWindow();
@@ -325,22 +326,21 @@ public class Principal extends javax.swing.JFrame {
         nf = tblMatrizInicial.getRowCount();
         nc = tblMatrizInicial.getColumnCount();
 
-        Helper.LimpiarTabla(tblMatrizResultante);
         switch (op) {
             case 0:
-                Helper.Figura1(tblMatrizInicial, tblMatrizResultante);
+                txtResultado.setText(Helper.Figura1(tblMatrizInicial));
                 break;
             case 1:
-                Helper.Figura2(tblMatrizInicial, tblMatrizResultante);
+                txtResultado.setText(Helper.Figura2(tblMatrizInicial));
                 break;
             case 2:
-                Helper.Figura3(tblMatrizInicial, tblMatrizResultante);
+                //txtResultado.setText(Helper.Figura3(tblMatrizInicial));
                 break;
             case 3:
-                Helper.Figura4(tblMatrizInicial, tblMatrizResultante);
+                txtResultado.setText(Helper.Figura4(tblMatrizInicial));
                 break;
             case 4:
-                Helper.Figura5(tblMatrizInicial, tblMatrizResultante);
+                txtResultado.setText(Helper.Figura5(tblMatrizInicial));
                 break;
         }
         JButton botonesH[] = {cmdOperacion, cmdLimpiar};
